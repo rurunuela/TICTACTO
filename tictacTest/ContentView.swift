@@ -1,4 +1,4 @@
-//https://github.com/valvoline/SwiftUI-TicTacToe/blob/master/TicTacToe/ContentView.swift
+
 import SwiftUI
 import Combine
 import GameplayKit
@@ -25,20 +25,12 @@ struct SquareView: View {
         Button(action: {
             self.action()
         }) {
-            Symbol(name: dataSource.cells[y][x] == .red ? "multiply" : dataSource.cells[y][x] == .black ? "circle" : "plus.square" )/*
-            Text(dataSource.cells[y][x] == .red ? "R" :dataSource.cells[y][x] == .black ? "B" : " " )
-                .font(.largeTitle)
-                .foregroundColor(Color.black.opacity(50))
-                .frame(minWidth: 80, minHeight: 80)
-                .background(Color.gray)
-                .cornerRadius(10)
-                .padding(EdgeInsets(top:1, leading: 1, bottom: 1, trailing: 1))*/
+            Symbol(name: dataSource.cells[y][x] == .red ? "multiply" : dataSource.cells[y][x] == .black ? "circle" : "plus.square" )
         }
     }
 }
 
 struct ContentView : View {
-    //private var checker = ModelBoard()
     @State private var showingAlert = false
     @State private var message = ""
     private var checker = Board()
@@ -70,9 +62,6 @@ struct ContentView : View {
          guard  checker.canMove(x: x, y: y) else {
             return
         }
-        //Check if win
-        
-        
         checker.cells[y][x] = checker.currentPlayer.chip
         checkWinner()
         checker.currentPlayer = checker.currentPlayer.opponent
