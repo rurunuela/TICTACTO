@@ -45,13 +45,10 @@ class tictacTestTests: XCTestCase {
         
         strategist.maxLookAheadDepth = 2
         
-        //strategist.randomSource = GKARC4RandomSource()
+       
         
         let board = Board()
-        /*board.setChip(chip: .red, x: 0, y: 0)
-        board.setChip(chip: .black, x: 2, y: 2)
-        board.setChip(chip: .red, x: 1, y:1)
-        board.setChip(chip: .black, x: 2, y: 0)*/
+     
         board.cells =  [[.none,.none,.none],
                         [.black,.red,.none],
                         [.none,.red,.black]]
